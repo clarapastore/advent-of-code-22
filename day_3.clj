@@ -60,3 +60,18 @@ CrZsJsPPZsGzwwsLwLmpwMDw")
                     (apply +))]
     (str "The answer for puzzle 1 is " result)))
 
+(resolve-puzzle-1)
+
+;; puzzle 2
+
+(defn resolve-puzzle-2 []
+  (let [result (->> input3
+                    str/split-lines
+                    (partition 3)
+                    (map #(apply find-common-char %))
+                    (map #(find-priority %))
+                    (apply +))]
+    (str "The answer for puzzle 2 is " result)))
+
+(resolve-puzzle-2)
+
