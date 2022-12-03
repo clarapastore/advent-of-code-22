@@ -32,11 +32,14 @@ CrZsJsPPZsGzwwsLwLmpwMDw")
         second-half (subs s half-point)]
     [first-half second-half]))
 
-(defn find-common-char 
-  "returns char in common between two strings. Ex: \N"
-  [str1 str2]
-  (let [set1 (set/intersection (set str1) (set str2))]
-    (first set1)))
+(defn find-common-char
+  "returns char in common between two or three strings. Ex: \N"
+  ([str1 str2]
+   (let [set1 (set/intersection (set str1) (set str2))]
+     (first set1)))
+  ([str1 str2 str3]
+   (let [set1 (set/intersection (set str1) (set str2) (set str3))]
+     (first set1))))
 
 (defn find-priority 
   "Returns the priority number of the corresponding character, based on the priority. Ex: 16"
